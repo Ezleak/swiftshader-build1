@@ -14,9 +14,9 @@ jobs:
           - Linux
           - Windows
         include:
-          - target: Linux
+          - target: Android
             os: ubuntu-latest
-            artifact: linux64
+            artifact: Android64
             build_script: build.sh
 
           - target: Windows
@@ -31,7 +31,7 @@ jobs:
           submodules: true
 
       - name: Install dependencies
-        if: matrix.target == 'Linux'
+        if: matrix.target == 'Android'
         run: |
           sudo apt-get update
           sudo apt-get install ninja-build
